@@ -1,0 +1,167 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ASSETS/Animations/Animations/Jump/world_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Steve.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ASSETS/WorldTiles/full_background.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1.49998, 68.6759 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 67.1937, 1.5 )
+
+[node name="Level1" type="Node2D"]
+position = Vector2( 504.993, 303.846 )
+scale = Vector2( 1, 1.012 )
+
+[node name="FullBackground" type="Sprite" parent="."]
+position = Vector2( -448.993, 24.8557 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="FullBackground2" type="Sprite" parent="."]
+position = Vector2( 685.007, 27.8202 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -8, 4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1507319, 0, 0, -1179679, -1610612722, 0, -1179675, 1610612738, 0, -1179671, 1610612738, 0, -1179667, 1610612738, 0, -1179663, 1610612738, 0, -1179659, 1610612738, 0, -1179655, 1610612738, 0, -1179651, 1610612738, 0, -1245183, 1610612738, 0, -1245179, 1610612741, 0, -1245171, 1610612742, 0, -1245167, 1610612738, 0, -1245163, 1610612738, 0, -1245159, 1610612738, 0, -1245155, 1610612738, 0, -917535, -1610612734, 0, -655391, -1610612734, 0, -589825, -1073741820, 0, -655357, -1610612732, 0, -655347, -1073741820, 0, -655343, -1073741824, 0, -655339, -1610612732, 0, -393247, -1610612734, 0, -327698, 4, 0, -327694, 4, 0, -393199, -1073741813, 0, -393191, 5, 0, -393187, 3, 0, -131103, -1610612734, 0, -65556, -1073741820, 0, -65552, -1073741824, 0, -65548, -1610612732, 0, -131055, -1073741822, 0, -131047, -1073741822, 0, -131043, 0, 0, 131041, -1610612733, 0, 131070, 17, 0, 65538, 18, 0, 131089, -1073741812, 0, 131097, -1073741822, 0, 131101, 0, 0, 393225, 9, 0, 393229, -1073741812, 0, 393233, -1610612724, 0, 393241, -1073741822, 0, 393245, 0, 0, 655373, -1073741821, 0, 655377, -1610612734, 0, 655385, -1073741822, 0, 983009, 2, 0, 983013, 2, 0, 983017, 2, 0, 983021, 2, 0, 983025, 2, 0, 983029, 2, 0, 983033, 2, 0, 983037, 2, 0, 917505, 2, 0, 917509, 2, 0, 917513, 2, 0, 917517, -1073741812, 0, 917521, 14, 0, 917525, 2, 0, 917529, 13, 0 )
+
+[node name="exit1" type="Area2D" parent="."]
+position = Vector2( 442.007, -162.891 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit1"]
+position = Vector2( 10.9985, -0.98819 )
+shape = SubResource( 1 )
+
+[node name="Steve" parent="." instance=ExtResource( 2 )]
+position = Vector2( -466.993, 164.184 )
+
+[node name="score_label" type="Label" parent="Steve"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="SecondCam" type="Camera2D" parent="Steve"]
+position = Vector2( 520, 131.423 )
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
+[node name="ThirdCam" type="Camera2D" parent="Steve"]
+position = Vector2( 519, 146.245 )
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
+[node name="FirstCam" type="Camera2D" parent="Steve"]
+position = Vector2( 0, -3.05176e-05 )
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
+[node name="Level2" type="Node2D" parent="."]
+position = Vector2( 978.007, -22.5751 )
+
+[node name="TileMap2" type="TileMap" parent="Level2"]
+position = Vector2( 38, 26.6798 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -1179679, 1610612738, 0, -1179675, 1610612738, 0, -1179671, 1610612738, 0, -1179667, 1610612738, 0, -1179663, 1610612738, 0, -1179659, 1610612738, 0, -1179655, 1610612738, 0, -1179651, 1610612738, 0, -1245183, 1610612738, 0, -1245179, 1610612738, 0, -1245175, 1610612738, 0, -1245171, 1610612738, 0, -1245167, 1610612738, 0, -1245163, 1610612738, 0, -1245159, 1610612738, 0, -1245155, 1610612738, 0, -655347, -1073741820, 0, -655343, -1073741824, 0, -655339, -1610612732, 0, -393199, -1073741813, 0, -393191, 5, 0, -393187, 2, 0, -327676, 9, 0, -327672, 10, 0, -65566, 9, 0, -65562, 10, 0, -65549, 9, 0, -65545, 10, 0, -131055, -1073741822, 0, -131051, 0, 0, -131047, 0, 0, -131043, 0, 0, 131089, -1073741822, 0, 131093, 0, 0, 131097, 0, 0, 131101, 0, 0, 393225, 9, 0, 393229, 2, 0, 393233, -1073741812, 0, 393237, 0, 0, 393241, 0, 0, 393245, 0, 0, 720861, 0, 0, 655373, -1610612736, 0, 655377, 0, 0, 655381, 0, 0, 655385, 0, 0, 655389, 0, 0, 983005, 0, 0, 983009, 12, 0, 983013, 2, 0, 983017, 2, 0, 983021, 2, 0, 983025, 2, 0, 983029, 2, 0, 983033, 2, 0, 983037, 2, 0, 917505, 2, 0, 917509, 2, 0, 917513, 11, 0, 917517, -1610612736, 0, 917521, 0, 0, 917525, 0, 0, 917529, 0, 0, 917533, 0, 0 )
+
+[node name="exit2" type="Area2D" parent="Level2"]
+position = Vector2( 468, -136.364 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/exit2"]
+position = Vector2( 24.5, -2.47035 )
+shape = SubResource( 1 )
+
+[node name="Gate" type="StaticBody2D" parent="Level2"]
+position = Vector2( -643, -141.304 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Gate"]
+position = Vector2( 0, 15.8103 )
+rotation = 1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+one_way_collision_margin = 1.5
+
+[node name="Gate2" type="StaticBody2D" parent="Level2"]
+position = Vector2( -526, -143.281 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/Gate2"]
+position = Vector2( 7, 15.8103 )
+rotation = 1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+one_way_collision_margin = 1.5
+
+[node name="Level3" type="Node2D" parent="."]
+
+[node name="TileMap3" type="TileMap" parent="Level3"]
+position = Vector2( 2040.01, 4.10474 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1179679, 1610612738, 0, -1179675, 1610612738, 0, -1179671, 1610612738, 0, -1179667, 1610612738, 0, -1179663, 1610612738, 0, -1179659, 1610612738, 0, -1179655, 1610612738, 0, -1179651, 1610612738, 0, -1245183, 1610612738, 0, -1245179, 1610612738, 0, -1245175, 1610612738, 0, -1245171, 1610612738, 0, -1245167, -1073741813, 0, -1245163, 1610612747, 0, -1245159, 1610612738, 0, -1245155, 1610612738, 0, -983023, -1073741822, 0, -983019, -1610612734, 0, -720879, -1073741822, 0, -720875, -1610612734, 0, -589825, -1073741820, 0, -655357, -1610612732, 0, -458735, -1073741822, 0, -458731, -1610612734, 0, -327711, 10, 0, -196591, 1610612742, 0, -196587, -1610612730, 0, -65556, -1073741820, 0, -65552, -1073741824, 0, -65548, -1610612732, 0, 131101, -1073741818, 0, 393241, -1073741818, 0, 393245, 13, 0, 655373, -1073741821, 0, 655377, -1610612735, 0, 655385, -1073741822, 0, 655389, 0, 0, 983009, 12, 0, 983013, 2, 0, 983017, 2, 0, 983021, 2, 0, 983025, 2, 0, 983029, 2, 0, 983033, 2, 0, 983037, 2, 0, 917505, 2, 0, 917509, 2, 0, 917513, 2, 0, 917517, -1073741812, 0, 917521, 14, 0, 917525, 2, 0, 917529, 13, 0, 917533, 0, 0 )
+
+[node name="exit3" type="Area2D" parent="Level3"]
+position = Vector2( 2523.01, -89.7688 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/exit3"]
+position = Vector2( 7.00024, -1.48221 )
+shape = SubResource( 1 )
+
+[node name="Gate3" type="StaticBody2D" parent="Level3"]
+position = Vector2( 1456.01, -170.796 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/Gate3"]
+position = Vector2( 8.91113, 12.8457 )
+rotation = 1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+one_way_collision_margin = 1.5
+
+[node name="Gate4" type="StaticBody2D" parent="Level3"]
+position = Vector2( 1466.01, -173.761 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/Gate4"]
+position = Vector2( 8.91113, 12.8457 )
+rotation = 1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+one_way_collision_margin = 1.5
+
+[connection signal="body_entered" from="exit1" to="Steve" method="_on_exit1_body_entered"]
+[connection signal="body_entered" from="exit1" to="Level2/Gate" method="_on_exit1_body_entered"]
+[connection signal="body_entered" from="exit1" to="Level2/Gate/CollisionShape2D" method="_on_exit1_body_entered"]
+[connection signal="body_entered" from="Level2/exit2" to="Steve" method="_on_exit2_body_entered"]

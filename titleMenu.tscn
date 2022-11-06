@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ASSETS/pixeloid_sans/PixeloidSans-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ASSETS/wallet.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+font_data = SubResource( 2 )
+
+[node name="exit" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 1, 0.992701 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.352941, 0.380392, 0.196078, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 298.0
+margin_top = 18.0
+margin_right = 726.0
+margin_bottom = 160.0
+custom_fonts/font = SubResource( 1 )
+text = "CASH DASH"
+
+[node name="Label" type="Label" parent="Label"]
+margin_left = -163.0
+margin_top = 236.0
+margin_right = 587.0
+margin_bottom = 378.0
+custom_fonts/font = SubResource( 1 )
+text = "CONGRATULATIONS"
+
+[node name="Label" type="Label" parent="Label/Label"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 3 )
+
+[node name="Wallet" type="Sprite" parent="."]
+position = Vector2( 457.5, 486.643 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]

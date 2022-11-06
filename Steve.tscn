@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://ASSETS/Animations/Animations/pilgram_idle/Right/StandingRight-BounceDown.png" type="Texture" id=1]
+[ext_resource path="res://Steve.gd" type="Script" id=2]
+[ext_resource path="res://ASSETS/Animations/Animations/Walk/StandingRight.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/Animations/Animations/Jump/Right-Jump.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/Animations/Animations/pilgram_idle/Right/StandingRight.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/Animations/Animations/dash/dash/Dash-Right.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/Animations/Animations/Walk/RightWalk.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Dash",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Walking",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 16.0
+
+[node name="Steve" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Dash"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, -4 )
+shape = SubResource( 1 )
